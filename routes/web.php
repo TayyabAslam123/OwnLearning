@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+## Cpanel Implementation
+Route::get('/list-email','CpanelController@listEmail');
+Route::get('/add-email','CpanelController@addEmail');
+Route::get('/forward-email','CpanelController@forwardEmail');
+
+## Array 
+Route::get('/index','ArrayController@index');
+Route::get('/index-2','ArrayController@index2');
+
+
+
+
+
+
