@@ -23,6 +23,11 @@ Route::get('/forward-email','CpanelController@forwardEmail');
 Route::get('/index','ArrayController@index');
 Route::get('/index-2','ArrayController@index2');
 
+## OBJ 
+Route::get('/json-1','ObjController@jsonFun');
+Route::get('/json-2','ObjController@jsonFun2');
+Route::get('/ex','ObjController@ex');
+
 
 
 

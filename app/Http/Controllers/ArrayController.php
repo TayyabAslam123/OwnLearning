@@ -48,11 +48,13 @@ class ArrayController extends Controller
         array_push($a,"blue","yellow");
         array_pop($a);
        
-
         // $test=[];
         $test['customer']= ["name"=>"tayyab", "age"=>24, "gender"=>"male"];
         $test['seller']= ["name"=>"john doe", "age"=>50, "gender"=>"male"];
-        dd($test);
+        // dd($test);
+
+        $twod= [[1,2,3],[4,5,6],[7,8,9]];
+        dd($twod);
 
     }
 
