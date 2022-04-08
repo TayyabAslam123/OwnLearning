@@ -27,6 +27,8 @@ Route::get('/index-2','ArrayController@index2');
 Route::get('/json-1','ObjController@jsonFun');
 Route::get('/json-2','ObjController@jsonFun2');
 Route::get('/ex','ObjController@ex');
+Route::get('/date-demo','ObjController@datePractice');
+
 
 
 

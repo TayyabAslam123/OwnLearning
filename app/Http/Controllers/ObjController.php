@@ -49,6 +49,19 @@ class ObjController extends Controller
         }
     
     }
+
+    public function datePractice(){
+
+        $a = date('Y-m-d');// year-month-day
+        $b = date('l'); // day name
+        $c = 'Copyright '.date("Y");
+        $d = date("h:i:sa"); // hour in 12 hrs : min : sec : a (am or pm)
+        date_default_timezone_set("Asia/Karachi"); //set date format
+        $e = date("h:i:sa"); 
+        $f = date('h:i:sa d-m-Y');
+
+        dd($a, $b, $c, $d, $e, $f);
+    }
     
 
 
