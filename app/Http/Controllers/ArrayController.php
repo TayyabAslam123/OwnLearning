@@ -8,7 +8,7 @@ class ArrayController extends Controller
 {
     public function index(){
        
-       $arr = [1,2,3,4,5,6,7,8,0,10,11,12,13,14,15]; 
+       $arr1 = [1,2,3,4,5,6,7,8,0,10,11,12,13,14,15]; 
     //    rsort($arr);
     //    dd($arr);
        
@@ -20,14 +20,16 @@ class ArrayController extends Controller
        
        $arr5 = [];
 
-    //    foreach($arr1 as $key=>$val){
-    //        echo $key;
-    //    }
-
-       foreach($arr1['red-balls'] as $key=>$val){
-           echo $val;
-           echo "<br>";
+       foreach($arr1 as $key=>$val){
+           echo $key;
+       
+           
        }
+
+    //    foreach($arr1['red-balls'] as $key=>$val){
+    //        echo $val;
+    //        echo "<br>";
+    //    }
 
     }
     ####################################################

@@ -28,7 +28,9 @@ Route::get('/json-1','ObjController@jsonFun');
 Route::get('/json-2','ObjController@jsonFun2');
 Route::get('/ex','ObjController@ex');
 
-
+## Validation
+Route::get('/show-view','ValidateController@showView');
+Route::post('/save-data','ValidateController@saveData');
 
 
 
