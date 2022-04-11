@@ -34,6 +34,10 @@ Route::get('/date-demo','ObjController@datePractice');
 Route::get('/show-view','ValidateController@showView');
 Route::post('/save-data','ValidateController@saveData');
 
+## Validation via request
+Route::get('/show-view-2','ValidateController@showViewTwo');
+Route::post('/save-data-2','ValidateController@saveDataTwo');
+
 
 
 

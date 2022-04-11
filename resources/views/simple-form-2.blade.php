@@ -11,7 +11,7 @@
 <body>
 
 <div class="container">
-  <h2>Form to test validation</h2>
+  <h2>Form to test Request</h2>
   <hr>
   {{-- {{dd($errors->first('email'))}} --}}
   {{-- @if (count($errors) > 0)
@@ -23,21 +23,21 @@
      </ul>
   </div>
 @endif --}}
-  <form action="{{url('save-data')}}" method="POST">
+  <form action="{{url('save-data-2')}}" method="POST">
     @csrf
     <div class="form-group">
-    @if($errors->first('email'))
+    @if($errors->first('username'))
       <div class = "alert alert-danger">
-        {{$errors->first('email')}}       
+        {{$errors->first('username')}}       
       </div>
     @endif  
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      <label for="email">Username:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter username" name="username">
     </div>
     <div class="form-group">
-    @if($errors->first('password'))
+    @if($errors->first('pass'))
         <div class = "alert alert-danger">
-            {{$errors->first('password')}}       
+            {{$errors->first('pass')}}       
         </div>
     @endif
 
@@ -46,7 +46,7 @@
     @enderror --}}
 
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pass">
     </div>
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
