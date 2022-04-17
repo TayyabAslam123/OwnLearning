@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\TestRequest;
+use Illuminate\Support\Facades\Validator;
 
 class ValidateController extends Controller
 {
@@ -23,9 +24,26 @@ class ValidateController extends Controller
 
         ## method 2
         $this->validate($request,[
-            'email'=>'bail|required|max:8',
-            'password'=>'bail|required|min:3'
+            'email'=>'required|max:8|integer',
+            'password'=>'required|min:3'
          ]);
+
+        ## method 3 
+        // $validator = Validator::make($request->all(), [
+        //     'email' => 'required|max:255',
+        //     'password' => 'required',
+        // ]);
+ 
+        // dd($validator);
+        ## if validation fails redirect to something custom
+        // if ($validator->fails()) {
+        //     return redirect('show-view-2')
+        //                 ->withErrors($validator)
+        //                 ->withInput();
+        // }
+
+
+
          
     }
     ## Request ##  
@@ -43,3 +61,6 @@ class ValidateController extends Controller
                  
     }
 
+
+
+    

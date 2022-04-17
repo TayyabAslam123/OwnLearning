@@ -13,6 +13,7 @@
 <div class="container">
   <h2>Form to test validation</h2>
   <hr>
+  {{-- {{dd( $errors)}} --}}
   {{-- {{dd($errors->first('email'))}} --}}
   {{-- @if (count($errors) > 0)
   <div class = "alert alert-danger">
@@ -32,7 +33,7 @@
       </div>
     @endif  
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+      <input type="text" class="form-control" id="email" placeholder="Enter email" name="email">
     </div>
     <div class="form-group">
     @if($errors->first('password'))
