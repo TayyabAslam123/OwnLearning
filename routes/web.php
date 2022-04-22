@@ -18,25 +18,26 @@ Route::get('/', function () {
 Route::get('/list-email','CpanelController@listEmail');
 Route::get('/add-email','CpanelController@addEmail');
 Route::get('/forward-email','CpanelController@forwardEmail');
-
-## Array 
+## Array (2D , implementation)
 Route::get('/index','ArrayController@index');
 Route::get('/index-2','ArrayController@index2');
-
-## OBJ 
+## OBJ (json, ecxeption, date frmt)
 Route::get('/json-1','ObjController@jsonFun');
 Route::get('/json-2','ObjController@jsonFun2');
 Route::get('/ex','ObjController@ex');
 Route::get('/date-demo','ObjController@datePractice');
-
-
 ## Validation
 Route::get('/show-view','ValidateController@showView');
 Route::post('/save-data','ValidateController@saveData');
-
 ## Validation via request
 Route::get('/show-view-2','ValidateController@showViewTwo');
 Route::post('/save-data-2','ValidateController@saveDataTwo');
+## Stripe
+Route::get('stripe', 'StripeController@stripe');
+Route::post('stripe', 'StripeController@stripePost')->name('stripe.post');
+## Middleware
+Route::get('/mid-age','MidController@fun1')->middleware('Age');
+
 
 
 
