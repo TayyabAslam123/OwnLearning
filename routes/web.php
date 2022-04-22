@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +37,25 @@ Route::get('stripe', 'StripeController@stripe');
 Route::post('stripe', 'StripeController@stripePost')->name('stripe.post');
 ## Middleware
 Route::get('/mid-age','MidController@fun1')->middleware('Age');
+## Lang / Localization
+Route::get('/set-lang', function(Request $request){ // set session 
+    $request->session()->put('language', $request->lang);
+    $x = $request->session()->get('language');
+    return $x;
+});
+//
+Route::get('/lang', function(Request $request){ // set locale
+    // App::setLocale('en-US');   
+    //App::setLocale('da-DK');        
+    $lang = $request->session()->get('language');
+    App::setlocale($lang);
+    return view('lang');
+});
+
+## Service
+Route::get('role-service' ,'ServiceController@index');
+Route::get('role-del' ,'ServiceController@delOdd');
+
 
 
 
