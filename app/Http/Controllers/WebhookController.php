@@ -10,7 +10,8 @@ class WebhookController extends Controller
         // https://webhook.site
         // Best site for working on web hooks
         // url where you want to send data
-        $url = 'https://webhook.site/abe5d583-c3f0-4213-afa1-4779c0be606f'; 
+        // $url = 'https://webhook.site/abe5d583-c3f0-4213-afa1-4779c0be606f'; 
+        $url = 'http://invoice-system.test/tt'; 
         $data = [
             'status' => 'success',
             'message' => 'Delivery Completed Successfully',
@@ -58,6 +59,14 @@ class WebhookController extends Controller
 
     }
     
+    ## https://pineco.de/handling-webhooks-with-laravel/
+    ## Receive a web hook data
+    ## make function with post method
+    public function test(Request $request){
+        logger ($request);
+    }
+    ## go to verify csrf middleware and add route in except
+
 
 
 }
