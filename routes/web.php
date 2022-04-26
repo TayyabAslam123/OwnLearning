@@ -51,10 +51,13 @@ Route::get('/lang', function(Request $request){ // set locale
     App::setlocale($lang);
     return view('lang');
 });
-
 ## Service
 Route::get('role-service' ,'ServiceController@index');
 Route::get('role-del' ,'ServiceController@delOdd');
+## Web Hook
+Route::get('run-web-hook' ,'WebhookController@index');
+
+
 
 
 
