@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+## send and receive web hook
+
 class WebhookController extends Controller
 {
     public function index(){
@@ -60,6 +62,7 @@ class WebhookController extends Controller
     }
     
     ## https://pineco.de/handling-webhooks-with-laravel/
+    
     ## Receive a web hook data
     ## make function with post method
     public function test(Request $request){
