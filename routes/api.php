@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('get-roles' ,'ApiController@getRoles');
+Route::get('delete-role/{id}' ,'ApiController@delRole');

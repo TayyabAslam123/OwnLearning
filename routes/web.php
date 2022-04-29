@@ -54,8 +54,11 @@ Route::get('/lang', function(Request $request){ // set locale
 ## Service
 Route::get('role-service' ,'ServiceController@index');
 Route::get('role-del' ,'ServiceController@delOdd');
-## Web Hook
+## Web Hook (send & receive)
 Route::get('run-web-hook' ,'WebhookController@index');
+## LOG's
+Route::get('make-log' ,'LogController@index');
+
 
 
 
