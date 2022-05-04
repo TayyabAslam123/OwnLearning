@@ -58,6 +58,11 @@ Route::get('role-del' ,'ServiceController@delOdd');
 Route::get('run-web-hook' ,'WebhookController@index');
 ## LOG's
 Route::get('make-log' ,'LogController@index');
+## 
+Route::get('one', 'OrmController@fun1');
+Route::get('many', 'OrmController@fun2');
+Route::get('many-many', 'OrmController@fun3');
+
 
 
 
