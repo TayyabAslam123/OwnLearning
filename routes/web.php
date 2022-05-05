@@ -62,6 +62,7 @@ Route::get('make-log' ,'LogController@index');
 Route::get('one', 'OrmController@fun1');
 Route::get('many', 'OrmController@fun2');
 Route::get('many-many', 'OrmController@fun3');
+Route::get('at', 'OrmController@fun4');
 
 
 
