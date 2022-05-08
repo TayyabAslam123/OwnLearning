@@ -63,6 +63,9 @@ Route::get('one', 'OrmController@fun1');
 Route::get('many', 'OrmController@fun2');
 Route::get('many-many', 'OrmController@fun3');
 Route::get('at', 'OrmController@fun4');
+Route::get('rel', 'OrmController@fun5');
+Route::get('rela', 'OrmController@fun6');
+
 
 ## Guzzle client side
 Route::get('test', 'ClientsideController@test');

@@ -8,6 +8,7 @@ use App\Branch;
 use App\Product;
 use App\Color;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 
 class OrmController extends Controller
 {
@@ -76,12 +77,33 @@ class OrmController extends Controller
         ]);
         return $product;
 
-
-
-
-
     }
 
+    public function fun5(){
+        $y = Hotel::has('branches')->get(); // check has data in relation
+        $y = Hotel::has('branches', '=', 3)->get(); // apply condition
+        $y = Hotel::doesntHave('branches')->get(); // check does not have data in relation
+        // 
+        $y = Hotel::whereHas('branches', function (Builder $query) {
+            $query->where('address', 'like', 'P%');
+        })->get();
+        //
+        $y = Hotel::withCount('branches')->get();
 
+        return $y;
+    }
+
+    public function fun6(){
+        $y = Product::has('colors')->get(); // check has data in relation
+        $y = Product::doesntHave('colors')->get(); // check has not data in relation
+        $y = Product::withCount('colors')->get();
+
+        $y = Color::whereHas('products', function (Builder $query) {
+            $query->where('price', '=', 500);
+        })->get();
+    
+
+        return $y;
+    }
 
 }
