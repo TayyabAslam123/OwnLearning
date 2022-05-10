@@ -17,23 +17,32 @@ class Product extends Model
     }
 
     #### Accessors ####
+    ### update attribute structure while getting value ###
 
-    ##
     public function getTitleAttribute($title){
         return strtoupper($title);
     }
-    ##
+
     public function getPriceAttribute($price){
-        $discount = $price * 0.10;
-        $price = $price - $discount;
-        return $price;
+        // $price = (int)$price;
+        // $discount = $price * 0.10;
+        // $price = $price - $discount;
+        return 'RS '. $price;
+    }
+
+    public function getCreatedAtAttribute($id){
+        return date('d-M-Y (D)') ;
     }
 
     #### Mutators ####
+    ### update attribute structure while saving value ,  just before saving ### 
     public function setPriceAttribute($price){
-        // dd($price);
-        $this->attributes['price'] = "Rs".$price; 
+        $this->attributes['price'] = $price + 10; 
     }
+
+    // public function setIdAttribute($id){
+    //      $this->attributes['id'] = '1'; 
+    // }
 
 
 

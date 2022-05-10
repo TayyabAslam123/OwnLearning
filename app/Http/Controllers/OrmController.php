@@ -115,8 +115,8 @@ class OrmController extends Controller
     }
 
     public function acc(){
-        // $product = Product::create(['title'=>'white socks', 'price'=>'150']);
-        $product = Product::all();
+         $product = Product::create(['title'=>'banana', 'price'=> 100]);
+        // $product = Product::all();
         return $product;
     }
 
