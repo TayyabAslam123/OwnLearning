@@ -99,11 +99,27 @@ class OrmController extends Controller
         $y = Product::withCount('colors')->get();
 
         $y = Color::whereHas('products', function (Builder $query) {
-            $query->where('price', '=', 500);
+            $query->where('price', '<', 500);
         })->get();
     
+        $y = Product::where('price', '<', 500)->with('colors')->get();
 
         return $y;
     }
 
+    public function fun7(){
+        ## Collection built in functions
+        $data = Product::all()->makeHidden('price');
+        $data = Product::all()->only([1, 2, 3]);
+        return $data;
+    }
+
+    public function acc(){
+        // $product = Product::create(['title'=>'white socks', 'price'=>'150']);
+        $product = Product::all();
+        return $product;
+    }
+
+
 }
+
