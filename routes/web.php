@@ -69,6 +69,8 @@ Route::get('elo', 'OrmController@fun7');
 Route::get('acc', 'OrmController@acc');
 Route::get('serial', 'OrmController@serial');
 
+##
+Route::resource('product', 'ProductController');
 
 ## Guzzle client side
 Route::get('test', 'ClientsideController@test');
