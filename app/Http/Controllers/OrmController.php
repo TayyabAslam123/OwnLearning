@@ -115,10 +115,35 @@ class OrmController extends Controller
     }
 
     public function acc(){
-         $product = Product::create(['title'=>'banana', 'price'=> 100]);
-        // $product = Product::all();
+        // $product = Product::create(['title'=>'white socks', 'price'=>'150']);
+        $product = Product::all();
         return $product;
     }
+
+    public function serial(){
+        ## serialize to array
+        $product = Product::with('colors')->first();
+        return $product->toArray();
+
+        ## serialize to Json
+        // $products = Product::all();
+        // return $products->toJson();
+
+        ## add in model to hide in json
+        //protected $hidden = ['password'];
+        ## alternatively
+        //protected $visible = ['first_name', 'last_name'];
+
+        ## Hide or make attribye visible on request
+        
+        return $user->makeVisible('attribute')->toArray();
+        return $user->makeHidden('attribute')->toArray();
+
+        ## appending a attribute at real 
+
+    }
+
+    
 
 
 }

@@ -67,9 +67,20 @@ Route::get('rel', 'OrmController@fun5');
 Route::get('rela', 'OrmController@fun6');
 Route::get('elo', 'OrmController@fun7');
 Route::get('acc', 'OrmController@acc');
+Route::get('serial', 'OrmController@serial');
+
 
 ## Guzzle client side
 Route::get('test', 'ClientsideController@test');
+
+## MailChimp
+Route::get('mail-chimp', 'MailChimpController@index');
+
+## Stripe 3D
+Route::get('/stripe-3d','Stripe3DController@index');
+Route::get('/success','Stripe3DController@success');
+
+
 
 
 
