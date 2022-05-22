@@ -18,6 +18,11 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        'App\Event\ProductCreated'=>[
+            'App\Listener\MakeLog',
+            'App\Listeners\AddVat',
+
+        ]
     ];
 
     /**

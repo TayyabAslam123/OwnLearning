@@ -13,7 +13,8 @@
         "laravel/framework": "^6.20.26",
         "laravel/tinker": "^2.5",
         "naif/php-cpanel-email": "^1.2",
-        "stripe/stripe-php": "^7.123"
+        "stripe/stripe-php": "^7.123",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^1.16.15",

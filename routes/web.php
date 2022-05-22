@@ -58,7 +58,7 @@ Route::get('role-del' ,'ServiceController@delOdd');
 Route::get('run-web-hook' ,'WebhookController@index');
 ## LOG's
 Route::get('make-log' ,'LogController@index');
-## 
+## ORM
 Route::get('one', 'OrmController@fun1');
 Route::get('many', 'OrmController@fun2');
 Route::get('many-many', 'OrmController@fun3');
@@ -67,8 +67,10 @@ Route::get('rel', 'OrmController@fun5');
 Route::get('rela', 'OrmController@fun6');
 Route::get('elo', 'OrmController@fun7');
 Route::get('acc', 'OrmController@acc');
-##
+## CRUD + can added resource
 Route::resource('product', 'ProductController');
+## Events || Listner || Observers
+Route::get('trigger', 'ConceptsController@createProduct');
 
 ## Guzzle client side
 Route::get('test', 'ClientsideController@test');
