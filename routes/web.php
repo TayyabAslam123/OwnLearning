@@ -68,12 +68,24 @@ Route::get('rela', 'OrmController@fun6');
 Route::get('elo', 'OrmController@fun7');
 Route::get('acc', 'OrmController@acc');
 ## CRUD + can added resource
+Route::get('serial', 'OrmController@serial');
+
+##
 Route::resource('product', 'ProductController');
 ## Events || Listner || Observers
 Route::get('trigger', 'ConceptsController@createProduct');
 
 ## Guzzle client side
 Route::get('test', 'ClientsideController@test');
+
+## MailChimp
+Route::get('mail-chimp', 'MailChimpController@index');
+
+## Stripe 3D
+Route::get('/stripe-3d','Stripe3DController@index');
+Route::get('/success','Stripe3DController@success');
+
+
 
 
 

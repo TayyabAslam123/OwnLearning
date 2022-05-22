@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.4",
         "laravel/framework": "^6.20.26",
         "laravel/tinker": "^2.5",
+        "mailchimp/mailchimp": "^2.0",
         "naif/php-cpanel-email": "^1.2",
         "stripe/stripe-php": "^7.123",
         "tymon/jwt-auth": "^1.0"

@@ -46,6 +46,8 @@ class StripeController extends Controller
            
         return back();
     }
+
+    
 }
 
 
