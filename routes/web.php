@@ -76,7 +76,13 @@ Route::resource('product', 'ProductController');
 Route::get('trigger', 'ConceptsController@createProduct');
 
 ## Guzzle client side
-Route::get('test', 'ClientsideController@test');
+// Route::get('test', 'ClientsideController@test');
+Route::get('get-posts', 'ClientsideController@getPosts');
+Route::get('get-post', 'ClientsideController@getPost');
+Route::get('create-post', 'ClientsideController@createPost');
+Route::get('update-post', 'ClientsideController@updatePost');
+Route::get('delete-post', 'ClientsideController@deletePost');
+
 
 ## MailChimp
 Route::get('mail-chimp', 'MailChimpController@index');
