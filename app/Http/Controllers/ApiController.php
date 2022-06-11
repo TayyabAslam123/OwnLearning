@@ -4,12 +4,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponser;
 use App\Role;
+use App\Product;
 use Exception;
 
 
 class ApiController extends Controller
 {
     use ApiResponser;
+    ## JWT
+    public function getProducts(){
+        try{
+            $data = Product::all();
+            return $this->successResponse($msg='All products data fetched succesfully', $data,200);
+        }catch(Exception $e){
+            return response()->json(['status'=>'false', 'data' => $e->getMessage()], 500);
+        }
+    } 
 
     public function getRoles(){
         try{

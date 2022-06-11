@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -44,6 +43,10 @@ class Product extends Model
     //      $this->attributes['id'] = '1'; 
     // }
 
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 
 
