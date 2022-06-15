@@ -20,7 +20,7 @@ class ProductController extends Controller
     }
 
 
-    public function  getproducts(Request $request){
+    public function  getproducts(){
         $user = auth()->user();
         $user = User::whereId($user->id)->first();
         $products = $user->products;
