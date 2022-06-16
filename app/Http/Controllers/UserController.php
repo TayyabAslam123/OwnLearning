@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
- 
+use JWTAuth;
+
 class UserController extends Controller
 {
    /**
@@ -29,7 +30,7 @@ class UserController extends Controller
     
         $this->validate($request,[
             'name'=>'required',
-            'email'=>'required',
+            'email'=>'required|unique:users',
             'password'=>'required|min:3'
         ]);
 
@@ -37,6 +38,9 @@ class UserController extends Controller
        // hashing the password , its important
        $userData['password'] = Hash::make($request->password);
        $user = User::create($userData);
-       return response()->json(['status'=>true, 'msg'=>'User created successfully', 'data'=>$user], 201);   
+       // Make token from new user
+       $token = JWTAuth::fromUser($user);
+
+       return response()->json(['status'=>true, 'msg'=>'User created successfully', 'data'=>$user, 'token'=>$token], 201);   
    }
 }
