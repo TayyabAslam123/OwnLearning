@@ -32,9 +32,6 @@ Route::post('/save-data','ValidateController@saveData');
 ## Validation via request
 Route::get('/show-view-2','ValidateController@showViewTwo');
 Route::post('/save-data-2','ValidateController@saveDataTwo');
-## Stripe
-Route::get('stripe', 'StripeController@stripe');
-Route::post('stripe', 'StripeController@stripePost')->name('stripe.post');
 ## Middleware
 Route::get('/mid-age','MidController@fun1')->middleware('Age');
 ## Lang / Localization
@@ -83,13 +80,40 @@ Route::get('create-post', 'ClientsideController@createPost');
 Route::get('update-post', 'ClientsideController@updatePost');
 Route::get('delete-post', 'ClientsideController@deletePost');
 
-
 ## MailChimp
 Route::get('mail-chimp', 'MailChimpController@index');
 
 ## Stripe 3D
 Route::get('/stripe-3d','Stripe3DController@index');
 Route::get('/success','Stripe3DController@success');
+
+## Pay U
+Route::get('/payu-auth','PayuController@auth');
+Route::get('/payu-payment-methods','PayuController@getPaymentMethods');
+Route::get('/payu-order','PayuController@newOrder');
+Route::get('/payu-order-data','PayuController@getOrderData');
+Route::get('/payu-order-transaction','PayuController@getOrderTransaction');
+Route::get('payu-form', function(){
+    return view('payu');
+});
+
+## Stripe
+Route::get('stripe', 'StripeController@stripe');
+Route::post('stripe', 'StripeController@stripePost')->name('stripe.post');
+Route::get('stripe-make-customer', 'StripeController@createCustomer');
+//
+Route::get('stripe-form', 'StripeController@form');
+Route::get('stripe-make-payment-method', 'StripeController@makePaymentMetod');
+Route::get('stripe-make-intent', 'StripeController@paymentIntent');
+Route::get('stripe-make-new-payment', 'StripeController@makePayment');
+
+Route::get('stripe-complete', 'StripeController@paymentComplete');
+Route::post('payment-flow', 'StripeController@paymentFlow');
+
+Route::get('stripe-invoice', 'StripeController@createInvoice');
+
+
+
 
 
 
