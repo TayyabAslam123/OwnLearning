@@ -106,11 +106,23 @@ Route::get('stripe-form', 'StripeController@form');
 Route::get('stripe-make-payment-method', 'StripeController@makePaymentMetod');
 Route::get('stripe-make-intent', 'StripeController@paymentIntent');
 Route::get('stripe-make-new-payment', 'StripeController@makePayment');
-
 Route::get('stripe-complete', 'StripeController@paymentComplete');
 Route::post('payment-flow', 'StripeController@paymentFlow');
-
 Route::get('stripe-invoice', 'StripeController@createInvoice');
+
+// Facades
+// Route::get('get-role', function(){
+    
+//     $user = new \App\MyCustomLibraries\Role();
+//     $user->getMyRole();
+// });
+
+Route::get('get-role', function(){
+    
+    // \App\MyCustomLibraries\RoleFacade::getMyRole();
+    // KEY ADDED IN ALIAS
+    MyRole::getMyRole();
+});
 
 
 

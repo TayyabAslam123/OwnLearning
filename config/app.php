@@ -227,6 +227,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'cPanel' => \Naif\cPanelMail\Facades\cPanelMail::class,
+        'MyRole' => \App\MyCustomLibraries\RoleFacade::class
 
     ],
 
