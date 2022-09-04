@@ -33,3 +33,5 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 // Route::get('products', 'Api\ProductController@getproducts')->middleware('jwt.auth');
 
 
+// Pusher API
+Route::resource('item','ItemController');

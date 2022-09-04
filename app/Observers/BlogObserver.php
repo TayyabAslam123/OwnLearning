@@ -12,9 +12,12 @@ class BlogObserver
      * @param  \App\Blog  $blog
      * @return void
      */
-    public function created(Blog $blog)
+    public function creating(Blog $blog)
     {
-        //
+        
+        $url = str_replace( ' ', '-', $blog->title);
+        $blog->url = 'blog-'.$url;
+  
     }
 
     /**
