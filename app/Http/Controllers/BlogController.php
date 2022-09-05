@@ -13,11 +13,19 @@ class BlogController extends Controller
      */
     public function index()
     {
-        Blog::truncate();
-        $blog = Blog::create([
-            'title' => 'social media marketing and required tools',
-            'body' => 'body'  
-           ]);
+      
+        // $blog = Blog::create([
+        //     'title' => 'social media marketing and required tools',
+        //     'body' => 'body'  
+        // ]);
+
+
+        $blog = Blog::where('id', 1)->first();
+        $blog->update([
+            'title' => 'marketing & tools',
+            'body' => 'testing'
+        ]);
+        
 
         return Blog::all();
     }

@@ -16,7 +16,7 @@ class BlogObserver
     {
         
         $url = str_replace( ' ', '-', $blog->title);
-        $blog->url = 'blog-'.$url;
+        $blog->url = 'my-new-blog-'.$url;
   
     }
 
@@ -26,9 +26,13 @@ class BlogObserver
      * @param  \App\Blog  $blog
      * @return void
      */
-    public function updated(Blog $blog)
+    public function updating(Blog $blog)
     {
-        //
+        // $blog = Blog::where('id', 2)->first();
+        // $blog->delete();
+                
+        $url = str_replace( ' ', '-', $blog->title);
+        $blog->url = 'updated-blog-'.$url;
     }
 
     /**

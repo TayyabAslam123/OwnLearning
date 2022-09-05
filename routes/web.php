@@ -124,13 +124,10 @@ Route::get('get-role', function(){
     MyRole::getMyRole();
 });
 
-
-
 // Observers
 Route::resource('blog', 'BlogController');
 
 // Pusher 
-
 ## Main Page Front End Page
 Route::get('get-result', function(){
     $items = App\Item::Orderby('id', 'DESC')->limit('10')->get();
