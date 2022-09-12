@@ -16,7 +16,7 @@ class BlogObserver
     {
        
         $url = str_replace( ' ', '-', $blog->title);
-        $blog->url = 'blog-'.$url;
+        $blog->url = 'my-new-blog-'.$url;
   
     }
 
