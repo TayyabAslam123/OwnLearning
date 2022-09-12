@@ -13,12 +13,16 @@ class BlogController extends Controller
      */
     public function index()
     {
-        Blog::truncate();
-        $blog = Blog::create([
-            'title' => 'social media marketing and required tools',
-            'body' => 'body'  
-           ]);
+        // Blog::truncate();
+        // $blog = Blog::create([
+        //     'title' => 'social media marketing and required tools',
+        //     'body' => 'body'  
+        // ]);
 
+        $blog = Blog::updateOrCreate(
+            ['id' => 1], 
+            [  'title' => 'social media marketing & required tools  l', 'body' => 'body' ]
+        );
         return Blog::all();
     }
 

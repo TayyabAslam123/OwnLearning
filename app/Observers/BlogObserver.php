@@ -14,7 +14,7 @@ class BlogObserver
      */
     public function creating(Blog $blog)
     {
-        
+       
         $url = str_replace( ' ', '-', $blog->title);
         $blog->url = 'blog-'.$url;
   
@@ -26,9 +26,11 @@ class BlogObserver
      * @param  \App\Blog  $blog
      * @return void
      */
-    public function updated(Blog $blog)
+    public function updating(Blog $blog)
     {
-        //
+        dd('here');
+        $url = str_replace( ' ', '-', $blog->title);
+        $blog->url = 'blog-post-'.$url;
     }
 
     /**
