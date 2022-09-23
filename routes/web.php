@@ -150,9 +150,13 @@ Route::get('get-result', function(){
 
 ## For Geting  data on front-end after API is called and event is triggered 
 Route::get('get-data','ItemController@getTopResult');
+## Notifications
+Route::get('send-notification', 'NotificationController@sendNotification');
+## Send email via smtp
+Route::get('send-email', 'EmailController@smtpMail');
 
-
-
+## Repository Design Pattern
+Route::resource('vehicle', 'VehicleController');
 
 
 

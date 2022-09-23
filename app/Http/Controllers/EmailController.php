@@ -7,14 +7,16 @@ use Illuminate\Http\Request;
 class EmailController extends Controller
 {
     public function smtpMail(){
-        $data = ['name'=>'tayyab'];
-        $user['to'] = 'tayyabaslam771@gmail.com';
-        Mail::send('mail', $data , function($messages) use ($user){
-            $messages->to('tayyabaslam771@gmail.com');
-            $messages->subject('Best Of Luck!');
 
+        $data = ['name'=>'tayyab'];
+        $user_email = 'tayyab.aslam@sixlogics.com';
+        ## Generate mail
+        Mail::send('mail', $data , function($messages) use ($user_email){
+            $messages->to($user_email);
+            $messages->subject('Testing Email!');
         });
-        return 'Mail Sent';
+
+        return 'Mail Sent Successfully';
     }
 }
 
