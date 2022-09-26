@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Vehicle;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Repositories\VehicleRepository;
 
 class VehicleController extends Controller
 {
+    private $vehicleRepository;
+
+    public function __construct(VehicleRepository $vehicleRepository){
+        $this->vehicleRepository = $vehicleRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,16 +21,8 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        $data = Vehicle::orderBy('vehicle_number')
-                ->get()->map(function($vehicle){
-                    return [
-                        'vehicle_number' =>     $vehicle->vehicle_number,
-                        'engine_number' =>      $vehicle->engine_number,
-                        'registration_date' =>  Carbon::parse($vehicle->registration_date)->diffForHumans(),
-
-                    ];
-                });
-        return $data;
+        $vehicle = $this->vehicleRepository->all();               
+        return $vehicle;
     }
 
     /**
@@ -54,9 +52,10 @@ class VehicleController extends Controller
      * @param  \App\Vehicle  $vehicle
      * @return \Illuminate\Http\Response
      */
-    public function show(Vehicle $vehicle)
+    public function show($vehicleId)
     {
-        //
+        $vehicle = $this->vehicleRepository->findById($vehicleId);               
+        return $vehicle;
     }
 
     /**
@@ -67,7 +66,7 @@ class VehicleController extends Controller
      */
     public function edit(Vehicle $vehicle)
     {
-        //
+   
     }
 
     /**
