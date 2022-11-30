@@ -12,7 +12,8 @@ class NotificationController extends Controller
     public function sendNotification(){
 
         $user = User::where('id', 1)->first();
-        logger('Sending notifination ...');
+        $email = ['pogip94958@canyona.com', 'cedaneha@teleg.eu' ];
+        $subject = 'Newsletter '. date("F j, Y");
 
         $details = [
             'greeting' => 'Dear User',
@@ -23,9 +24,9 @@ class NotificationController extends Controller
             'order_id' => 101
         ];
 
-        Notification::send($user, new EmailNotification($details));
+        $x = Notification::send($user, new EmailNotification($email, $subject));
 
-        dd('Done');
+        dd('Notification sent successfully ! :)');
     }
 
 

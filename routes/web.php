@@ -158,9 +158,21 @@ Route::get('send-email', 'EmailController@smtpMail');
 ## Repository Design Pattern
 Route::resource('vehicle', 'VehicleController');
 
+## CODERS-TAPE 
+## Service Containers
+Route::get('pay', 'PayOrderController@store');
+## View Composers
+Route::get('view-composer', function(){
+    return view('view-composer');
+});
+## Run command via url
+Route::get('my-command', function () {
+    \Artisan::call('migrate'); // command
+    dd("Done!!!");
+});
 
-
-
+## JOB'S QUEUES
+Route::get('queue-action', 'QueueController@index');
 
 
 

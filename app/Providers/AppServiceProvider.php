@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Providers;
-
+use App\billing\PaymentGateway;
+## For view-composers concept
+use Illuminate\Support\Facades\View;
+##
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(PaymentGateway::class  , function($app){
+            return new PaymentGateway('Kr');
+        });
     }
 
     /**
@@ -24,5 +29,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        ## For view-composers concept
+        View::share('view_composer', 'Yolo Polo');
+        
     }
 }
