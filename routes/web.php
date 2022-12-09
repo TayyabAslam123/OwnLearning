@@ -174,6 +174,11 @@ Route::get('my-command', function () {
 ## JOB'S QUEUES
 Route::get('queue-action', 'QueueController@index');
 
+## Excel / CSV
+Route::get('file-import-export', 'ExcelController@fileImportExport');
+Route::post('file-import', 'ExcelController@fileImport')->name('file-import');
+Route::get('file-export', 'ExcelController@fileExport')->name('file-export');
+
 
 
 
