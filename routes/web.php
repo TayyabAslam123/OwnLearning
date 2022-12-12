@@ -179,6 +179,12 @@ Route::get('file-import-export', 'ExcelController@fileImportExport');
 Route::post('file-import', 'ExcelController@fileImport')->name('file-import');
 Route::get('file-export', 'ExcelController@fileExport')->name('file-export');
 
+## Whatsapp-API
+Route::get('whatsapp', 'WhatsappController@main');
+Route::get('whatsapp-2', 'WhatsappController@main2');
+
+
+
 
 
 
