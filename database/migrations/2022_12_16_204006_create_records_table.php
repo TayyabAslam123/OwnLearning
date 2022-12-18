@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemsTable extends Migration
+class CreateRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('itemss', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('draw_id');
-            $table->integer('data_two')->nullable();
-            $table->text('data_three')->nullable();
-            $table->string('data_twelve');
+        Schema::create('records', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('number');
+            $table->string('api')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('itemss');
+        Schema::dropIfExists('records');
     }
 }
