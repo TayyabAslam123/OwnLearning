@@ -191,6 +191,11 @@ Route::get('sample-view', function(){
 Route::get('url-1', 'WhatsappController@main');
 Route::get('url-2', 'WhatsappController@main2');
 
+## Jquery-sync
+Route::get('notification-plugin', function(){
+    return view('notification-plugin');
+});
+
 
 
 
