@@ -183,6 +183,15 @@ Route::get('file-export', 'ExcelController@fileExport')->name('file-export');
 Route::get('whatsapp', 'WhatsappController@main');
 Route::get('whatsapp-2', 'WhatsappController@main2');
 
+## Jquery-sync
+Route::get('sample-view', function(){
+    return view('sample-view');
+});
+
+Route::get('url-1', 'WhatsappController@main');
+Route::get('url-2', 'WhatsappController@main2');
+
+
 
 
 
